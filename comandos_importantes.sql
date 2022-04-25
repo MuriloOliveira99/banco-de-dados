@@ -1,1 +1,0 @@
-SELECT TOP 20 * FROM person.Person
