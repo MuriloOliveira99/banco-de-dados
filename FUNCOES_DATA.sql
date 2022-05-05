@@ -14,7 +14,7 @@ SELECT YEAR(GETDATE()) AS 'ano'
 -- 23
 SELECT DAY(GETDATE()) AS 'dia'
 
--- Pegando o apenas o mês do GETDATE()
+-- Pegando o apenas o mï¿½s do GETDATE()
 -- 04
 SELECT MONTH(GETDATE()) AS 'mes'
 
@@ -24,8 +24,8 @@ SELECT MONTH('07/06/1999') AS 'mes'
 SELECT DAY('07/06/1999') AS 'dia' 
 
 /*******************************************************************
-		      USANDO A FUNÇÃO CONVERT() COM GETDATE()
-Documentação: docs.microsoft.com/pt-br/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver15#j-using-convert-with-datetime-data-in-different-formats
+		      USANDO A FUNï¿½ï¿½O CONVERT() COM GETDATE()
+Documentaï¿½ï¿½o: docs.microsoft.com/pt-br/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver15#j-using-convert-with-datetime-data-in-different-formats
 *********************************************************************/
 --Tabela ANSI SQL
 
@@ -48,40 +48,40 @@ SELECT CONVERT(CHAR, GETDATE(), 2)
 -- Retorna a data no formato aa/mm/dd
 -- 23/04/22                                           
 SELECT CONVERT(CHAR, GETDATE(), 3) 
--- ENTRE OUTROS FORMATOS DISPONÍVEIS NA TABELA ANSI SQL
+-- ENTRE OUTROS FORMATOS DISPONï¿½VEIS NA TABELA ANSI SQL
 
 /*******************************************************************
 							 DATEPART()
 					  RETORNA PARTE DE UMA DATA
-					  RECEBE 2 PARAMÊTROS
+					  RECEBE 2 PARAMï¿½TROS
 *********************************************************************/
 
 -- Retorna o ANO do GETDATE()
 SELECT DATEPART(YEAR, GETDATE()) AS 'ANO com DATEPART'
 
--- Retorna o MÊS do GETDATE()
-SELECT DATEPART(MONTH, GETDATE()) AS 'MÊS com DATEPART'
+-- Retorna o Mï¿½S do GETDATE()
+SELECT DATEPART(MONTH, GETDATE()) AS 'Mï¿½S com DATEPART'
 
 -- Retorna o DIA do GETDATE()
 SELECT DATEPART(DAY, GETDATE()) AS 'DIA com DATEPART'
 
--- Retorna o ANO, MÊS, DIA de uma data específica
+-- Retorna o ANO, Mï¿½S, DIA de uma data especï¿½fica
 SELECT DATEPART(YEAR, '07/06/1999') AS 'ANO com DATEPART'
-SELECT DATEPART(MONTH, '07/06/1999') AS 'MÊS com DATEPART'
+SELECT DATEPART(MONTH, '07/06/1999') AS 'Mï¿½S com DATEPART'
 SELECT DATEPART(DAY, '07/06/1999') AS 'DIA com DATEPART'
 
 
 USE AC3_M3_consultorio
 -- Retorna o ANO de uma coluna
--- DISTINCT para retornar os anos sem repetição
+-- DISTINCT para retornar os anos sem repetiï¿½ï¿½o
 SELECT DISTINCT DATEPART(YEAR, dataHora) AS 'ANO' FROM Consulta 
 
--- Retorna o MÊS de uma coluna
---DISTINCT para retornar os meses sem repetição
-SELECT DATEPART(MONTH, dataHora) AS 'MÊS' FROM Consulta
+-- Retorna o Mï¿½S de uma coluna
+--DISTINCT para retornar os meses sem repetiï¿½ï¿½o
+SELECT DATEPART(MONTH, dataHora) AS 'Mï¿½S' FROM Consulta
 
 -- Retorna o DIA de uma coluna
--- DISTINCT para retornar os dias sem repetição
+-- DISTINCT para retornar os dias sem repetiï¿½ï¿½o
 SELECT DATEPART(DAY, dataHora) AS 'DIA' FROM Consulta
 
 /*******************************************************************
@@ -101,14 +101,14 @@ SELECT DATEADD(MONTH, -2, GETDATE())
 -- 23-2 = 21
 SELECT DATEADD(DAY, -2, GETDATE())
 
--- Adicionar +5 anos da data atual(DATETIME)
+-- Adiciona +5 anos da data atual(DATETIME)
 -- 2022+5 = 2027
 SELECT DATEADD(YEAR, 5, GETDATE())
 
 -- Converte o (DATETIME) para o DATE sem as horas, minutos, segundos e milissegundos
 SELECT CONVERT(DATE, DATEADD(DAY, -2, GETDATE())) 
 
--- Adicionando +3 horas da hora atual
+-- Adiciona +3 horas da hora atual
 SELECT DATEADD(hour, 3, GETDATE())
 
 -- Retorna SMALLDATETIME(sem os milissegundos)
@@ -116,15 +116,15 @@ SELECT CONVERT(SMALLDATETIME, DATEADD(hour, 3, GETDATE()))
 
 /*******************************************************************
 							  DATEDIFF()
-						DIFERENÇA ENTRE DATAS
+						DIFERENï¿½A ENTRE DATAS
 *********************************************************************/
--- Retorna a diferença do meu ano atual (2022) com o de 2027
+-- Retorna a diferenï¿½a do meu ano atual (2022) com o de 2027
 SELECT DATEDIFF(YEAR, GETDATE(), DATEADD(YEAR, 5, GETDATE())) AS 'MESES'
 
--- Retorna a diferença de meses do ano atual até o ano de 2024
+-- Retorna a diferenï¿½a de meses do ano atual atï¿½ o ano de 2024
 SELECT DATEDIFF(MONTH, GETDATE(), DATEADD(YEAR, 2, GETDATE())) AS 'ANOS'
 
--- Retorna a diferença de dias do ano atual até o ano de 2025
+-- Retorna a diferenï¿½a de dias do ano atual atï¿½ o ano de 2025
 SELECT DATEDIFF(DAY, GETDATE(), DATEADD(YEAR, 3, GETDATE()))
 
 -- Retorna a quantidade de horas de vida

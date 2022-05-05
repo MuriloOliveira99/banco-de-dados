@@ -1,6 +1,10 @@
 USE AdventureWorks2017
 
-/* 295 LINHAS */
+/* 
+295 LINHAS 
+TRAZ TODOS OS PRODUTOS, MESMO QUE N√ÉO TENHA 
+MODELO, CATEGORIA E SUBCATEGORIA
+*/
 SELECT p.[name] AS 'Produto',
 	   pm.[name] AS 'Modelo',
 	   pc.[name] AS 'Categoria',
@@ -16,10 +20,11 @@ FROM production.Product AS p
 GO
 
 
-/* Exibir nome, modelo, categoria e subcategoria do produto */
+/* Exibir nome, modelo, categoria e subcategoria do produto 
 
--- Retorna todos os produtos, mesmo que ele n„o tenha 
--- modelo, categoria ou subcategoria 
+TRAZ TODOS OS PRODUTOS QUE POSSUEM 
+MODELO, CATEGORIA E SUBCATEGORIA
+*/
 SELECT p.[name] AS 'Nome do Produto',
 	   pm.[name] AS 'Modelo do Produto',
 	   pc.[name] AS 'Categoria do Produto',
@@ -31,6 +36,7 @@ INNER JOIN Production.ProductSubcategory AS psc
 	ON p.ProductSubcategoryID = psc.ProductSubcategoryID
 INNER JOIN Production.ProductCategory AS pc 
 	ON psc.ProductCategoryID = pc.ProductCategoryID
+GO
 
 
 
