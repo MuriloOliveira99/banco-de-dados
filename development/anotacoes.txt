@@ -1,0 +1,4 @@
+No SQL Server gera a criação de constraint mas não cria nenhum indice
+CHARINDEX é mais performatico que o LIKE
+TRUNCATE é mais rapido que o DELETE. Além disso, ele zera o identity
+WITH VALUES Insere valores em uma nova coluna com valores default
